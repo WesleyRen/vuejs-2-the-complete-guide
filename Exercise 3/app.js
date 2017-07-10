@@ -1,7 +1,8 @@
 new Vue({
         el: '#exercise',
         data: {
-            value: 0
+            value: 0,
+            timeout: 2000
         },
         computed: {
           result: function() {
@@ -9,13 +10,11 @@ new Vue({
           }
         },
         watch: {
-          value: function(v) {
+          result: function() {
             var vm = this;
-            if (vm.value > 37) {
-              setTimeout(function() {
-                vm.value = 0;
-              }, 2000);
-            }
+            setTimeout(function() {
+              vm.value = 0;
+            }, vm.timeout);
           }
         }
     });

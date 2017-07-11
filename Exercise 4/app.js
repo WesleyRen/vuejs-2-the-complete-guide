@@ -11,16 +11,22 @@ new Vue({
     divClass2: "",
     selectedClass: "",
     isBlue: "false",
-    borderWidth: 10,
-    progressPct: 0
+    progressPct: 0,
+    myStyle: {
+        width: '100px',
+        height: '50px',
+        border: 'black solid',
+        backgroundColor: ''
+    }
   },
   computed: {
     divClass1: function() {
       return {
         highlight: this.isHighlighted,
         shrink: this.isShrunk
-      }
-    }
+      };
+    },
+
   },
   watch: {
     // stop progress bar with it reaches 90% of the page width.

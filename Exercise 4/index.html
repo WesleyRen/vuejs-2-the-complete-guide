@@ -13,7 +13,7 @@
   <div :class="[color, border]">I got no class :(</div>
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
   <div>
-    <input type="text" v-model="divClass2">
+    <label>type in a class name(thick, dotted)</label><input type="text" v-model="divClass2">
     <div :class="divClass2"></div>
   </div>
   <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
@@ -28,8 +28,8 @@
   </div>
   <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>
-    <input type="text" v-model="borderWidth">
-    <div :style="{width: '100px', height: borderWidth + 'px', border: 'black', border: 'solid'}"></div>
+    <label>background color</label><input type="text" v-model="myStyle.backgroundColor">
+    <div :style="myStyle"></div>
   </div>
   <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
   <div>

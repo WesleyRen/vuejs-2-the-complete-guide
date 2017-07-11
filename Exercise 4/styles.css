@@ -13,3 +13,24 @@
   background-color: gray;
   width: 50px !important;
 }
+
+.blue {
+  color: blue;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.div_class3 {
+  width: 100px;
+  height: 10px;
+  border: 1px solid black;
+}
+
+.thick {
+  border: 10px solid;
+}
+.dotted {
+  border: dotted;
+}

@@ -25,10 +25,15 @@
   <ul>
     <li v-for="(v, k) in testData">{{k}}:
       (object length: {{Object.keys(v).length}}) <!-- test code to intergrate with plain Javascript-->
-      <ul v-if="k === 'data'">
+      <ul v-if="Array.isArray(v)">
         <li v-for="(d, i) in v">{{i}}: {{d}}</li>
       </ul>
-      <span v-else>{{v}}</span>
+      <template v-else>{{v}}</template>
+      <!-- v-if ... v-else don't have to have the same element type.
+      Here's what the official doc says:
+      A v-else element must immediately follow
+      a v-if or a v-else-if element - otherwise it will not be recognized.
+      -->
     </li>
   </ul>
 </div>

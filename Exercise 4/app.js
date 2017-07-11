@@ -17,6 +17,12 @@ new Vue({
         height: '50px',
         border: 'black solid',
         backgroundColor: ''
+    },
+    progressBox:  {
+      width: '300px',
+      height: '20px',
+      backgroundColor: '',
+      border: '1px solid black'
     }
   },
   computed: {
@@ -26,13 +32,20 @@ new Vue({
         shrink: this.isShrunk
       };
     },
-
+    progressBar: function() {
+      return {
+        width: this.progressPct + '%',
+        height: this.progressBox.height,
+        backgroundColor: 'purple',
+        border: this.progressBox.border
+      }
+    }
   },
   watch: {
     // stop progress bar with it reaches 90% of the page width.
     progressPct: function() {
       var vm = this;
-      if (vm.progressPct >= 90)
+      if (vm.progressPct >= 100)
         clearInterval(vm.intervalVar2);
     }
   },

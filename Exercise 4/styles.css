@@ -28,6 +28,12 @@
   border: 1px solid black;
 }
 
+.float {
+  width: 100%;
+  height: 10px;
+  margin: 10px;
+  float: left;
+}
 .thick {
   border: 10px solid;
 }

@@ -10,7 +10,7 @@
     <div id="effect" :class="divClass1"></div>
   </div>
   <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
-  <div :class="[color, border]">I got no class :(</div>
+  <div :class="[color, border, 'float']">I got no class :(</div>
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
   <div>
     <label>type in a class name(thick, dotted)</label><input type="text" v-model="divClass2">

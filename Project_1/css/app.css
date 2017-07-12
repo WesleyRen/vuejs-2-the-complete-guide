@@ -38,11 +38,17 @@
 .log ul .player-turn {
     color: blue;
     background-color: #e4e8ff;
+    width: 45%;
+    float: left;
+    text-align: left;
 }
 
 .log ul .monster-turn {
     color: red;
     background-color: #ffc0c1;
+    width: 45%;
+    float: right;
+    text-align: right;
 }
 
 button {

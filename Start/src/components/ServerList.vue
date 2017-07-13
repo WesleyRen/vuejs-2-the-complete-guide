@@ -9,3 +9,9 @@
       </ul>
   </div>
 </template>
+
+<style scoped=true>
+div {
+  border: 1px solid blue;
+}
+</style>

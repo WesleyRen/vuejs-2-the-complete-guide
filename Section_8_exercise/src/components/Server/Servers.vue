@@ -2,7 +2,7 @@
     <div class="col-xs-12 col-sm-6">
         <ul class="list-group" :servers="servers">
           <app-server v-for="server in servers"
-            :id="server.id" :status="server.status">
+            :server="server">
           </app-server>
         </ul>
     </div>
@@ -25,16 +25,6 @@ export default {
   },
   components: {
     appServer: Server
-  },
-  created() {
-    eventBus.$on('serverStatusWasReset', (data) => {
-      for (var i in this.servers) {
-        console.log('index: ' + i + ' - ' + this.servers[i].id  + ' - ' + data.id)
-        if (this.servers[i].id == data.id) {
-          this.servers[i].status = data.status;
-        }
-      }
-    });
   }
 }
 </script>

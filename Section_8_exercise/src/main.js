@@ -3,8 +3,8 @@ import App from './App.vue'
 
 export const eventBus = new Vue({
   methods: {
-    serverClicked(id, status) {
-      this.$emit('serverWasClicked', {id, status});
+    serverClicked(server) {
+      this.$emit('serverWasClicked', server);
     }
   }
 })

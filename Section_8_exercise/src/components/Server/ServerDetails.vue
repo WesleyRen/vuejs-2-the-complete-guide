@@ -1,8 +1,12 @@
 <template>
-    <div class="col-xs-12 col-sm-6" v-if="serverId != null">
-      <p>
-        Server: {{ serverId }} was selected, with status: {{ status }}.
+    <div class="col-xs-12 col-sm-6">
+      <p v-if="!server">
+        Please select a server.
       </p>
+      <p v-else>
+        Server: {{ server.id }} was selected, with status: {{ server.status }}.
+      </p>
+      <hr />
       <button @click="resetServerStatus">Reset Server Status</button>
     </div>
 </template>
@@ -13,22 +17,18 @@ import { eventBus } from '../../main';
 export default {
   data: function() {
     return {
-      serverId: null,
-      status: null
+      server: null
     }
   },
   methods: {
     resetServerStatus() {
-      this.status = 'Normal';
-      var id = this.serverId, status = this.status;
-      eventBus.$emit('serverStatusWasReset', {id, status});
+      this.server.status = 'Normal';
     }
   },
   created() {
-    eventBus.$on('serverWasClicked', (serverInfo) => {
-      this.serverId = serverInfo.id;
-      this.status = serverInfo.status;
-    })
+    eventBus.$on('serverWasClicked', (server) => {
+      this.server = server;
+    });
   }
 }
 </script>

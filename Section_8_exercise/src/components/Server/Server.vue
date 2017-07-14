@@ -1,8 +1,8 @@
 <template>
   <li
           class="list-group-item"
-          @click="updateServerDetail(id, status)">
-      Server #{{ id }}, status: {{ status }}
+          @click="updateServerDetail(server)">
+      Server #{{ server.id }}, status: {{ server.status }}
   </li>
 </template>
 
@@ -11,12 +11,11 @@ import { eventBus } from '../../main';
 
 export default {
   props: {
-    id: Number,
-    status: String
+    server: Object
   },
   methods: {
-    updateServerDetail(id, status) {
-      eventBus.serverClicked(id, status);
+    updateServerDetail(server) {
+      eventBus.serverClicked(server);
     }
   }
 }

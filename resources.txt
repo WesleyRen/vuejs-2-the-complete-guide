@@ -14,3 +14,7 @@ Official Docs - Template Syntax: http://vuejs.org/guide/syntax.html
 Official Docs - Events: http://vuejs.org/guide/events.html
 Official Docs - Computed Properties & Watchers: http://vuejs.org/guide/computed.html
 Official Docs - Class and Style Binding: http://vuejs.org/guide/class-and-style.html
+
+Official Docs - Props: http://vuejs.org/guide/components.html#Props
+Official Docs - Custom Events: http://vuejs.org/guide/components.html#Custom-Events
+Official Docs - Non-Parent-Child Communication: http://vuejs.org/guide/components.html#Non-Parent-Child-Communication

@@ -1,6 +1,13 @@
 <template>
     <div class="container">
       <div v-if="!isSubmitted">
+        <div class="row" >
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h1>Sign Up Page</h1>
+          </div>
+        </div>
+        <hr>
+
         <form v-if="!isSubmitted">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
@@ -10,15 +17,8 @@
                     <!-- Mail -->
                     <!-- Password -->
                     <!-- Store Data? Yes/No -->
-                    <h1>Sign up page</h1>
-                    <hr>
                     <div class="form-group">
-                      <label for="fullName">Full Name</label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        class="form-control"
-                        v-model="userData.fullName"/>
+                      <full-name-input v-model="userData.fullName"></full-name-input>
                     </div>
 
                     <div class="form-group">
@@ -37,9 +37,6 @@
                         id="password"
                         class="form-control"
                         v-model.lazy="userData.password"/>
-                        <p>
-                          {{ userData.password }}
-                        </p>
                     </div>
 
                     <hr />
@@ -82,7 +79,7 @@
                       <h4>Your Data</h4>
                   </div>
                   <div class="panel-body">
-                      <p>Full Name: {{ userData.fullName }}</p>
+                      <p>Full Name: {{ userData.fullName.firstName }} {{ userData.fullName.lastName }}</p>
                       <p>Mail: {{ userData.email }}</p>
                       <p>Password: {{ userData.password }}</p>
                       <p>Store in Database?: {{ storeInDatabase }}</p>
@@ -94,17 +91,22 @@
 </template>
 
 <script>
+    import FullNameInput from './FullNameInput.vue';
+
     export default {
       data() {
         return {
           userData: {
-            fullName: '',
+            fullName: {firstName: '', lastName: ''},
             email: '',
             password: '',
           },
           storeInDatabase: true,
           isSubmitted: false
         };
+      },
+      components: {
+        FullNameInput
       },
       methods: {
         submit() {

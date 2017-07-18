@@ -5,23 +5,40 @@
                 <h1>Filters & Mixins</h1>
                 <!-- Exercise 1) -->
                 <!-- Build a local Filter which reverses the Text it is applied on -->
-
+                <p>{{ someText | reverse }}</p>
                 <!-- Exercise 2 -->
                 <!-- Build a global Filter which counts the length of a word and it appends it -->
                 <!-- Like this: "Test" => Gets Filtered to => "Test (4)" -->
+                <p>{{ someText | mark-word-len }}</p>
 
                 <!-- Exercise 3 -->
                 <!-- Do the same as in Exercises 1 & 2, now with Computed Properties -->
+                <p>{{ reversedText }}</p>
+                <p>{{ markedText }}</p>
 
                 <!-- Exercise 4 -->
                 <!-- Share the Computed Property rebuilding Exercise 2 via a Mixin -->
+
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { MarkTextWithLength } from './MarkTextWithLength';
+
     export default {
+      mixins: [MarkTextWithLength],
+      filters: {
+        reverse(value) {
+          return value.split("").reverse().join("");
+        }
+      },
+      computed: {
+          reversedText: function() {
+            return this.someText.split("").reverse().join("");
+          }
+      }
     }
 </script>
 

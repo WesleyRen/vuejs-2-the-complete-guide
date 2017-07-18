@@ -33,4 +33,7 @@ Official Docs - Misc: http://vuejs.org/guide/components.html#Misc
 # forms:
 Official Docs - Forms: http://vuejs.org/guide/forms.html
 
+# filters and mixins:
+Official Docs - Filters: http://vuejs.org/guide/syntax.html#Filters
+Official Docs - Mixins: http://vuejs.org/guide/mixins.html
 

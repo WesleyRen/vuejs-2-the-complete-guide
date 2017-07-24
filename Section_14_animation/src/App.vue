@@ -23,7 +23,8 @@
                 <transition name="slide" type="animation" appear>
                   <div class="alert alert-info" v-if="show">This is some info 3</div>
                 </transition>
-
+                
+                <!-- Use Animate.css: https://daneden.github.io/animate.css/  -->
                 <transition
                             appear
                             enter-class=""

@@ -4,7 +4,8 @@ new Vue({
     playerHealth: 100,
     monsterHealth: 100,
     gameIsRunning: false,
-    turns: []
+    turns: [],
+    currentTurn: 0
   },
   methods: {
     startGame: function() {
@@ -32,8 +33,10 @@ new Vue({
       }
       this.turns.unshift({
         isPlayer: true,
-        text: 'You healed yourselff for ' + heal
+        text: 'You healed yourselff for ' + heal,
+        id: this.currentTurn + 1
       });
+      this.currentTurn++;
       this.monsterAttack(5, 12);
     },
     giveUp: function() {
@@ -45,8 +48,10 @@ new Vue({
       this.monsterHealth -= damage;
       this.turns.unshift({
         isPlayer: true,
-        text: 'You hit monster for ' + damage.toString().padStart(2, '0')
+        text: 'You hit monster for ' + damage.toString().padStart(2, '0'),
+        id: this.currentTurn + 1
       });
+      this.currentTurn++;
       return true;
     },
     monsterAttack: function(min, max) {
@@ -54,8 +59,10 @@ new Vue({
       this.playerHealth -= damage;
       this.turns.unshift({
         isPlayer: false,
-        text: 'Monster hits you for ' + damage.toString().padStart(2, '0')
+        text: 'Monster hits you for ' + damage.toString().padStart(2, '0'),
+        id: this.currentTurn + 1
       });
+      this.currentTurn++;
       this.checkEndOfGame();
     },
     calculateRandom: function(min, max) {

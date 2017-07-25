@@ -4,9 +4,30 @@
     <p>Locale: {{ $route.query.locale}}</p>
     <p>Analytics: {{ $route.query.q}}</p>
     <hr />
-    <button class="btn btn-primary">Confirm</button>
+    <button class="btn btn-primary" @click="confirmed = true">Confirm</button>
     <div style="height: 700px"></div> <!-- 700px to make sure scroll appears -->
     <p id="data">Some Extra Data</p>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      confirmed: false
+    }
+  },
+  beforeRouteLeave(to, from, next) {
+    if (this.confirmed) {
+      next();
+    } else {
+      if (confirm('Are you sure?')) {
+        next();
+      } else {
+        next(false);
+      }
+    }
+  }
+}
+</script>

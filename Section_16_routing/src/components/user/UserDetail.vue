@@ -25,6 +25,13 @@ export default {
         hash: '#data'
       }
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    if (true) { // some condition is true or false.
+      next();
+    } else {
+      next(false); // abort.
+    }
   }
 }
 </script>

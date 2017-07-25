@@ -19,6 +19,11 @@ const router = new VueRouter({
   }
 });
 
+router.beforeEach((to, from, next) => {
+  console.log('global beforeEach');
+  next(); // next(false) to abandon. next('<location>') for default location.
+});
+
 new Vue({
   el: '#app',
   router,

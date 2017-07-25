@@ -38,7 +38,7 @@
       methods: {
         submit() {
           console.log(this.user.name + ' ' + this.user.email);
-          this.$http.post('https://http-vuejs-855ab.firebaseio.com/data.json', this.user)
+          this.$http.post('', this.user)
             .then(response => {
               console.log(response);
             }, error => {
@@ -46,7 +46,7 @@
             });
         },
         fetchData() {
-          this.$http.get('https://http-vuejs-855ab.firebaseio.com/data.json')
+          this.$http.get('')
             .then(response => {
               return response.json();
             })

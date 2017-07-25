@@ -30,7 +30,7 @@ import Header from './components/Header.vue';
   /* transform: trnaslateY(5em); */
 }
 .slide-enter-active {
-  animation: slide-in 1s ease-out forwards;
+  animation: slide-in .5s ease-out forwards;
   transition: opacity .5s;
 }
 
@@ -38,8 +38,8 @@ import Header from './components/Header.vue';
 
 }
 .slide-leave-active {
-  animation: slide-out 1s ease-out forwards;
-  transition: opacity 1s;
+  animation: slide-out .5s ease-out forwards;
+  transition: opacity .5s;
   opacity: 0;
   position: absolute;
 }

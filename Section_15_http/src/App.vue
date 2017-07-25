@@ -32,18 +32,20 @@
       data() {
         return {
           user: {name: '', email: ''},
-          users: []
+          users: [],
+          resource: {}
         };
       },
       methods: {
         submit() {
-          console.log(this.user.name + ' ' + this.user.email);
-          this.$http.post('', this.user)
-            .then(response => {
-              console.log(response);
-            }, error => {
-              console.log(error);
-            });
+          // console.log(this.user.name + ' ' + this.user.email);
+          // this.$http.post('', this.user)
+          //   .then(response => {
+          //     console.log(response);
+          //   }, error => {
+          //     console.log(error);
+          //   });
+          this.resource.save({}, this.user);
         },
         fetchData() {
           this.$http.get('')
@@ -58,6 +60,9 @@
               }
             });
         }
+      },
+      created() {
+        this.resource = this.$resource('data.json');
       }
     }
 </script>

@@ -9,12 +9,10 @@
     export default {
         methods: {
             increment() {
-                this.$store.state.counter++;
-                this.$store.state.clicks++;
+              this.$store.commit('increment');
             },
             decrement() {
-              this.$store.state.counter--;
-              this.$store.state.clicks++;
+              this.$store.commit('decrement');
             }
         }
     }

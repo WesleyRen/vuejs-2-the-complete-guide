@@ -30,10 +30,10 @@
         computed: {
           value: {
             get() {
-              return this.$store.getters.value;
+              return this.$store.getters['value/getValue'];
             },
             set(value) {
-              this.$store.dispatch('updateValue', value);
+              this.$store.dispatch('value/updateValue', value);
             }
           }
         },

@@ -10,7 +10,7 @@ import { mapActions } from 'vuex';
 
     export default {
         methods: {
-          ...mapActions([
+          ...mapActions('counter', [ // namespaced with module name 'counter'
             'increment',
             'decrement'
           ]),

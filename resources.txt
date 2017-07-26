@@ -47,3 +47,6 @@ Requests and Responses (incl. Different File Formats): https://github.com/yyx990
 vue-router Github Page: https://github.com/vuejs/vue-router
 vue-router Documentation:https://router.vuejs.org/en/
 
+# Vuex:
+Vuex Github Page: https://github.com/vuejs/vuex
+Vuex Documenation: https://vuex.vuejs.org/en/

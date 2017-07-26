@@ -1,12 +1,14 @@
+import * as types from '../types';
+
 const state = {
     counter: 0,
     clicks: 0
   };
 const getters = {
-    doubleCounter: state => {
+    [types.DOUBLE_COUNTER]: state => {
       return state.counter;
     },
-    stringCounter: state => {
+    [types.CLICK_COUNTER]: state => {
       return state.clicks + ' clicks';
     }
   };

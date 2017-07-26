@@ -8,6 +8,8 @@
                 <hr>
                 <app-counter></app-counter>
                 <app-another-counter></app-another-counter>
+                <input type="text" v-model="value" />
+                <p> {{ value }} </p>
             </div>
         </div>
     </div>
@@ -24,6 +26,16 @@
             return {
                 counter: 0
             }
+        },
+        computed: {
+          value: {
+            get() {
+              return this.$store.getters.value;
+            },
+            set(value) {
+              this.$store.dispatch('updateValue', value);
+            }
+          }
         },
         components: {
             appCounter: Counter,

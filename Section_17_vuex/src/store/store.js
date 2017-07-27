@@ -1,20 +1,19 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import counter from './modules/counter.js';
-import * as actions from './actions.js';
-import * as getters from './getters.js';
-import * as mutations from './mutations.js';
+import counter from './modules/counter.js'; // modulized local scope.
+import value from './modules/value.js';
+import * as getters from './getters.js'; // global scope.
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    value: 0
+    fakeCounter: 100,
+    counter: 10000
   },
   getters,
-  mutations,
-  actions,
   modules: {
-    counter
+    counter,
+    value
   }
 })
